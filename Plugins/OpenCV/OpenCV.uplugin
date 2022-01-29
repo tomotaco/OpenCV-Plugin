@@ -3,7 +3,7 @@
 	"Version": 1,
 	"VersionName": "1.0",
 	"FriendlyName": "OpenCV",
-	"Description": "A simple plugin that integrates OpenCV 3.0.0 to UE4. I am in no way affiliated with OpenCV, and their library can be found for free at http://opencv.org/.  This plugin is made by the UE4 community, and does not mean that OpenCV endorses UE4 in any way.",
+	"Description": "A simple plugin that integrates OpenCV 4.5.5 to UE4. I am in no way affiliated with OpenCV, and their library can be found for free at http://opencv.org/.  This plugin is made by the UE4 community, and does not mean that OpenCV endorses UE4 in any way.",
 	"Category": "Computer Vision",
 	"CreatedBy": "Ginku",
 	"CreatedByURL": "",
@@ -13,8 +13,11 @@
 	"Modules": [
 		{
 			"Name": "OpenCV",
-			"Type": "Developer",
-			"LoadingPhase": "Default"
+			"Type": "Runtime",
+			"LoadingPhase": "PostConfigInit",
+			"WhitelistPlatforms": [
+				"Win64"
+			]
 		}
 	],
 	"EnabledByDefault": false,

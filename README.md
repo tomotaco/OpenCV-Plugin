@@ -11,6 +11,19 @@ This fork was modified to work on OpenCV 4.5.5 and UE4.27 on Windows10(64bit).
 - Download OpenCV binary package for Windows(`opencv-4.5.5-vc14_vc15.exe`) from https://github.com/opencv/opencv/releases/tag/4.5.5 .
   Extract the package and copy some dlls and libs. (See [here](Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Includes/Readme.md) and [here](Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Libraries/Win64/Readme.md) for details.)
 
+- Comment out the following parts in Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Includes/opencv2/core/utility.hpp to fix compilation error. (This fix is same as OpenCV 3.2.0)
+
+  - `utility.hpp` line 52:
+    ```
+    //#if defined(check)
+    //#  warning Detected Apple 'check' macro definition, it can cause build conflicts. Please, include this header before any Apple headers.
+    //#endif
+    ```
+  - `utility.hpp` line 934:
+    ```
+    //bool check() const;
+    ```
+
 Afterwards, be sure to regenerate project files. For visual studios, right click your project (.uasset) file and select 'generate visual studio project files' after deleting your previous visual studios file.
 
 ## Usage
