@@ -1,7 +1,6 @@
 // Some copyright should be here...
 
-#include "OpenCVPrivatePCH.h"
-
+#include "OpenCV.h"
 
 
 #define LOCTEXT_NAMESPACE "FOpenCVModule"
